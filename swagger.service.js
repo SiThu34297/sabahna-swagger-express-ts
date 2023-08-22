@@ -85,7 +85,8 @@ var SwaggerService = /** @class */ (function () {
                     };
                 }
                 if (property.model) {
-                    if (_.isEqual(swagger_definition_constant_1.SwaggerDefinitionConstant.Model.Property.Type.ARRAY, property.type)) {
+                    if (_.isEqual(swagger_definition_constant_1.SwaggerDefinitionConstant.Model.Property
+                        .Type.ARRAY, property.type)) {
                         newProperty.items = {
                             $ref: this.buildRef(property.model),
                         };
@@ -107,7 +108,8 @@ var SwaggerService = /** @class */ (function () {
         this.data.externalDocs = externalDocs;
     };
     SwaggerService.prototype.setGlobalResponses = function (globalResponses) {
-        this.globalResponses = this.buildOperationResponses(globalResponses);
+        this.globalResponses =
+            this.buildOperationResponses(globalResponses);
     };
     SwaggerService.prototype.addPath = function (args, target) {
         var currentController = {
@@ -124,7 +126,8 @@ var SwaggerService = /** @class */ (function () {
                 currentController.description = args.description;
                 currentController.security = args.security;
                 currentController.deprecated = args.deprecated;
-                currentController.groupProtalName = args.groupProtalName;
+                currentController.groupProtalName =
+                    args.groupProtalName;
             }
         }
         this.controllerMap[target.name] = _.mergeWith(this.controllerMap[target.name], currentController);
@@ -183,10 +186,12 @@ var SwaggerService = /** @class */ (function () {
                         swaggerPath.put = this_1.buildSwaggerOperation(path.put, controller);
                     }
                     if (path.patch) {
-                        swaggerPath.patch = this_1.buildSwaggerOperation(path.patch, controller);
+                        swaggerPath.patch =
+                            this_1.buildSwaggerOperation(path.patch, controller);
                     }
                     if (path.delete) {
-                        swaggerPath.delete = this_1.buildSwaggerOperation(path.delete, controller);
+                        swaggerPath.delete =
+                            this_1.buildSwaggerOperation(path.delete, controller);
                     }
                     if (path.path && path.path.length > 0) {
                         if (data.paths && controller.path) {
@@ -227,7 +232,8 @@ var SwaggerService = /** @class */ (function () {
         var mobileController = {};
         for (var controllerName in this.controllerMap) {
             var controller = this.controllerMap[controllerName];
-            if (controller.groupProtalName === definition.groupProtalName) {
+            if (controller.groupProtalName ===
+                definition.groupProtalName) {
                 mobileController[controllerName] = controller;
             }
         }
@@ -241,30 +247,36 @@ var SwaggerService = /** @class */ (function () {
             swaggerBuildDefinitionModel = {
                 properties: {},
             };
-            this.modelsMap[definitionKey] = swaggerBuildDefinitionModel;
+            this.modelsMap[definitionKey] =
+                swaggerBuildDefinitionModel;
         }
         var swaggerBuildDefinitionModelProperty = {
             type: _.lowerCase(propertyType),
         };
         if (args) {
-            swaggerBuildDefinitionModelProperty.required = args.required;
-            swaggerBuildDefinitionModelProperty.description = args.description;
+            swaggerBuildDefinitionModelProperty.required =
+                args.required;
+            swaggerBuildDefinitionModelProperty.description =
+                args.description;
             swaggerBuildDefinitionModelProperty.enum = args.enum;
-            swaggerBuildDefinitionModelProperty.itemType = args.itemType;
-            swaggerBuildDefinitionModelProperty.example = args.example;
+            swaggerBuildDefinitionModelProperty.itemType =
+                args.itemType;
+            swaggerBuildDefinitionModelProperty.example =
+                args.example;
             swaggerBuildDefinitionModelProperty.format = args.format;
             if (args.model) {
-                swaggerBuildDefinitionModelProperty.model = args.model;
+                swaggerBuildDefinitionModelProperty.model =
+                    args.model;
                 if (!_.isEqual('Array', propertyType)) {
-                    swaggerBuildDefinitionModelProperty.type = undefined;
+                    swaggerBuildDefinitionModelProperty.type =
+                        undefined;
                 }
             }
             if (args.type) {
                 swaggerBuildDefinitionModelProperty.type = args.type;
             }
         }
-        swaggerBuildDefinitionModel.properties[propertyKey.toString()] =
-            swaggerBuildDefinitionModelProperty;
+        swaggerBuildDefinitionModel.properties[propertyKey.toString()] = swaggerBuildDefinitionModelProperty;
         this.setDefinitions(this.modelsMap);
     };
     SwaggerService.prototype.addApiModel = function (args, target) {
@@ -274,10 +286,12 @@ var SwaggerService = /** @class */ (function () {
             swaggerBuildDefinitionModel = {
                 properties: {},
             };
-            this.modelsMap[definitionKey] = swaggerBuildDefinitionModel;
+            this.modelsMap[definitionKey] =
+                swaggerBuildDefinitionModel;
         }
         if (args) {
-            swaggerBuildDefinitionModel.description = args.description;
+            swaggerBuildDefinitionModel.description =
+                args.description;
             if (args.name) {
                 var name_1 = _.upperFirst(args.name);
                 this.modelsMap[name_1] = _.cloneDeep(this.modelsMap[definitionKey]);
@@ -348,7 +362,8 @@ var SwaggerService = /** @class */ (function () {
         if ('delete' === operation) {
             currentPath.delete = this.buildOperation(args, target, propertyKey);
         }
-        this.controllerMap[target.constructor.name] = currentController;
+        this.controllerMap[target.constructor.name] =
+            currentController;
     };
     SwaggerService.prototype.buildOperation = function (args, target, propertyKey) {
         var operation = {
@@ -388,7 +403,8 @@ var SwaggerService = /** @class */ (function () {
                 operation.parameters = _.concat(operation.parameters, this.buildBodyOperationParameter(args.parameters.body));
             }
             if (args.parameters.formData) {
-                operation.parameters = _.concat(operation.parameters, this.buildParameters(swagger_definition_constant_1.SwaggerDefinitionConstant.Parameter.In.FORM_DATA, args.parameters.formData));
+                operation.parameters = _.concat(operation.parameters, this.buildParameters(swagger_definition_constant_1.SwaggerDefinitionConstant.Parameter.In
+                    .FORM_DATA, args.parameters.formData));
             }
         }
         if (args.responses) {
@@ -405,25 +421,30 @@ var SwaggerService = /** @class */ (function () {
             var response = responses[responseIndex];
             var newSwaggerOperationResponse = {};
             if (response.description) {
-                newSwaggerOperationResponse.description = response.description;
+                newSwaggerOperationResponse.description =
+                    response.description;
             }
             else {
                 switch (responseIndex) {
                     case '200':
-                        newSwaggerOperationResponse.description = 'Success';
+                        newSwaggerOperationResponse.description =
+                            'Success';
                         break;
                     case '201':
-                        newSwaggerOperationResponse.description = 'Created';
+                        newSwaggerOperationResponse.description =
+                            'Created';
                         break;
                     case '202':
-                        newSwaggerOperationResponse.description = 'Accepted';
+                        newSwaggerOperationResponse.description =
+                            'Accepted';
                         break;
                     case '203':
                         newSwaggerOperationResponse.description =
                             'Non-Authoritative Information';
                         break;
                     case '204':
-                        newSwaggerOperationResponse.description = 'No Content';
+                        newSwaggerOperationResponse.description =
+                            'No Content';
                         break;
                     case '205':
                         newSwaggerOperationResponse.description =
@@ -462,7 +483,8 @@ var SwaggerService = /** @class */ (function () {
                             'Service Unavailable';
                         break;
                     default:
-                        newSwaggerOperationResponse.description = null;
+                        newSwaggerOperationResponse.description =
+                            null;
                 }
             }
             if (response.model) {
@@ -475,7 +497,8 @@ var SwaggerService = /** @class */ (function () {
                         items: {
                             $ref: ref,
                         },
-                        type: swagger_definition_constant_1.SwaggerDefinitionConstant.Response.Type.ARRAY,
+                        type: swagger_definition_constant_1.SwaggerDefinitionConstant.Response.Type
+                            .ARRAY,
                     };
                 }
                 newSwaggerOperationResponse.schema =
@@ -489,11 +512,13 @@ var SwaggerService = /** @class */ (function () {
     SwaggerService.prototype.buildBodyOperationParameter = function (bodyOperationArgsBaseParameter) {
         var swaggerOperationParameterList = [];
         var swaggerOperationParameter = {};
-        swaggerOperationParameter.name = bodyOperationArgsBaseParameter.name
-            ? bodyOperationArgsBaseParameter.name
-            : 'body';
+        swaggerOperationParameter.name =
+            bodyOperationArgsBaseParameter.name
+                ? bodyOperationArgsBaseParameter.name
+                : 'body';
         swaggerOperationParameter.in = 'body';
-        swaggerOperationParameter.type = bodyOperationArgsBaseParameter.type;
+        swaggerOperationParameter.type =
+            bodyOperationArgsBaseParameter.type;
         swaggerOperationParameter.description =
             bodyOperationArgsBaseParameter.description;
         swaggerOperationParameter.required =
@@ -520,10 +545,19 @@ var SwaggerService = /** @class */ (function () {
                 var propertySchemaOperation = {};
                 propertySchemaOperation.type =
                     propertyBodyOperationArgsBaseParameter.type;
-                schema.properties[propetyIndex] = propertySchemaOperation;
+                schema.properties[propetyIndex] =
+                    propertySchemaOperation;
                 if (schema.properties[propetyIndex].type === 'array') {
-                    schema.properties[propetyIndex].items =
-                        propertyBodyOperationArgsBaseParameter.items;
+                    if (propertyBodyOperationArgsBaseParameter.items) {
+                        schema.properties[propetyIndex].items =
+                            propertyBodyOperationArgsBaseParameter.items;
+                    }
+                }
+                if (schema.properties[propetyIndex].type === 'object') {
+                    if (propertyBodyOperationArgsBaseParameter.$ref) {
+                        schema.properties[propetyIndex].$ref =
+                            propertyBodyOperationArgsBaseParameter.$ref;
+                    }
                 }
                 if (propertyBodyOperationArgsBaseParameter.required) {
                     schema.required.push(propetyIndex);
@@ -571,10 +605,13 @@ var SwaggerService = /** @class */ (function () {
             if (parameter.name) {
                 newSwaggerOperationParameter.name = parameter.name;
             }
-            newSwaggerOperationParameter.description = parameter.description;
-            newSwaggerOperationParameter.required = parameter.required;
+            newSwaggerOperationParameter.description =
+                parameter.description;
+            newSwaggerOperationParameter.required =
+                parameter.required;
             newSwaggerOperationParameter.format = parameter.format;
-            newSwaggerOperationParameter.deprecated = parameter.deprecated;
+            newSwaggerOperationParameter.deprecated =
+                parameter.deprecated;
             newSwaggerOperationParameter.allowEmptyValue =
                 parameter.allowEmptyValue;
             newSwaggerOperationParameter.minimum = parameter.minimum;
@@ -591,10 +628,12 @@ var SwaggerService = /** @class */ (function () {
         if (_.isUndefined(operation.consumes)) {
             operation.consumes = this.data.consumes;
         }
-        if (_.isUndefined(operation.security) && controller.security) {
+        if (_.isUndefined(operation.security) &&
+            controller.security) {
             operation.security = this.buildOperationSecurity(controller.security);
         }
-        if (_.isUndefined(operation.deprecated) && controller.deprecated) {
+        if (_.isUndefined(operation.deprecated) &&
+            controller.deprecated) {
             operation.deprecated = controller.deprecated;
         }
         if (this.globalResponses) {

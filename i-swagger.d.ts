@@ -50,6 +50,7 @@ export interface ISwaggerOperationParameter {
 export interface ISwaggerPropertySchemaOperation {
     type: string;
     items: string;
+    $ref: string;
 }
 export interface ISwaggerOperationSchema {
     type?: string;

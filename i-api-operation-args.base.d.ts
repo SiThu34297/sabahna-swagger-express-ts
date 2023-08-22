@@ -17,6 +17,7 @@ export interface IApiPropertyBodyOperationArgsBaseParameter {
     type: string;
     required?: boolean;
     items?: string;
+    $ref?: string;
 }
 export interface IApiBodyOperationArgsBaseParameter extends IApiOperationArgsBaseParameter {
     properties?: {
