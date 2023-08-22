@@ -1,0 +1,1 @@
+{"version":3,"file":"api-operation-delete.decorator.js","sourceRoot":"","sources":["../src/api-operation-delete.decorator.ts"],"names":[],"mappings":";;;AAAA,qDAAmD;AAInD,SAAgB,kBAAkB,CAC9B,IAA6B;IAE7B,OAAO,UACH,MAAW,EACX,WAA4B,EAC5B,UAA8B;QAE9B,gCAAc,CAAC,WAAW,EAAE,CAAC,kBAAkB,CAC3C,IAAI,EACJ,MAAM,EACN,WAAW,CACd,CAAC;IACN,CAAC,CAAC;AACN,CAAC;AAdD,gDAcC"}

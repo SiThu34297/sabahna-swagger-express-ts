@@ -1,0 +1,21 @@
+{
+    "name": "sabahna-swagger-express-ts",
+    "version": "1.0.0",
+    "description": "Generate Swagger from Express route",
+    "main": "index.js",
+    "scripts": {
+        "start": "node lib/index.js",
+        "dev": "tsc-watch --onSuccess \"nodemon ./lib/index.js\"",
+        "build": "tsc & cp package.json ./lib"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "peerDependencies": {
+        "@types/express": "^4.17.11",
+        "@types/lodash": "^4.14.168",
+        "express": "^4.17.1",
+        "lodash": "^4.17.21",
+        "reflect-metadata": "^0.1.13"
+    }
+}
