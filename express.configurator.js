@@ -1,10 +1,10 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+'use strict';
+Object.defineProperty(exports, '__esModule', {value: true});
 exports.docsJson = exports.express = void 0;
-var express_1 = require("express");
-var swagger_service_1 = require("./swagger.service");
-var assert = require("assert");
-var swagger_builder_1 = require("./swagger.builder");
+var express_1 = require('express');
+var swagger_service_1 = require('./swagger.service');
+var assert = require('assert');
+var swagger_builder_1 = require('./swagger.builder');
 function express(options) {
     var path = '/api-docs/swagger.json';
     if (options) {
@@ -22,7 +22,15 @@ function express(options) {
 exports.express = express;
 function docsJson(options) {
     assert.ok(options, 'Definition is required.');
-    var swaggerDocs = swagger_service_1.SwaggerService.getInstance().getDefinition(options);
+    var swaggerDocs =
+        swagger_service_1.SwaggerService.getInstance().getDefinition(
+            options,
+        );
+
+    if (swaggerDocs.openapi) {
+        delete swaggerDocs.swagger;
+    }
+
     return swaggerDocs;
 }
 exports.docsJson = docsJson;
