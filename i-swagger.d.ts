@@ -1,4 +1,4 @@
-import { ISwaggerSecurityDefinition } from './swagger.builder';
+import {ISwaggerSecurityDefinition} from './swagger.builder';
 export interface ISwaggerLicense {
     name: string;
     url?: string;
@@ -145,4 +145,5 @@ export interface ISwagger {
     securityDefinitions?: {
         [key: string]: ISwaggerSecurityDefinition;
     };
+    groupProtalName?: string;
 }

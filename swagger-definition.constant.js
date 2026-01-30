@@ -1,14 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+'use strict';
+Object.defineProperty(exports, '__esModule', {value: true});
 exports.SwaggerDefinitionConstant = void 0;
 var SwaggerDefinitionConstant = /** @class */ (function () {
-    function SwaggerDefinitionConstant() {
-    }
+    function SwaggerDefinitionConstant() {}
     SwaggerDefinitionConstant.JSON = 'application/json';
     SwaggerDefinitionConstant.XML = 'application/xml';
     SwaggerDefinitionConstant.ZIP = 'application/zip';
     SwaggerDefinitionConstant.PDF = 'application/pdf';
-    SwaggerDefinitionConstant.X_WWW_FORM_URLENCODED = 'application/x-www-form-urlencoded';
+    SwaggerDefinitionConstant.X_WWW_FORM_URLENCODED =
+        'application/x-www-form-urlencoded';
     SwaggerDefinitionConstant.FORM_DATA = 'multipart/form-data';
     SwaggerDefinitionConstant.TEXT_PLAIN = 'text/plain';
     SwaggerDefinitionConstant.TEXT_HTML = 'text/html';
@@ -32,7 +32,8 @@ var SwaggerDefinitionConstant = /** @class */ (function () {
         TEXT_HTML: SwaggerDefinitionConstant.TEXT_HTML,
         TEXT_PLAIN: SwaggerDefinitionConstant.TEXT_PLAIN,
         XML: SwaggerDefinitionConstant.XML,
-        X_WWW_FORM_URLENCODED: SwaggerDefinitionConstant.X_WWW_FORM_URLENCODED,
+        X_WWW_FORM_URLENCODED:
+            SwaggerDefinitionConstant.X_WWW_FORM_URLENCODED,
         ZIP: SwaggerDefinitionConstant.ZIP,
     };
     SwaggerDefinitionConstant.Scheme = {
@@ -54,7 +55,7 @@ var SwaggerDefinitionConstant = /** @class */ (function () {
                 BINARY: 'binary',
                 DATE: 'date',
                 DATE_TIME: 'date-time',
-                PASSWORD: 'password'
+                PASSWORD: 'password',
             },
             ItemType: {
                 BOOLEAN: SwaggerDefinitionConstant.BOOLEAN,
@@ -110,10 +111,11 @@ var SwaggerDefinitionConstant = /** @class */ (function () {
         },
         Type: {
             API_KEY: 'apiKey',
+            HTTP: 'http',
             BASIC_AUTHENTICATION: 'basic',
         },
     };
     return SwaggerDefinitionConstant;
-}());
+})();
 exports.SwaggerDefinitionConstant = SwaggerDefinitionConstant;
 //# sourceMappingURL=swagger-definition.constant.js.map

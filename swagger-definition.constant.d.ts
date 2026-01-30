@@ -105,6 +105,7 @@ export declare class SwaggerDefinitionConstant {
         };
         Type: {
             API_KEY: string;
+            HTTP: string;
             BASIC_AUTHENTICATION: string;
         };
     };

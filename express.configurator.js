@@ -27,8 +27,10 @@ function docsJson(options) {
             options,
         );
 
-    if (swaggerDocs.openapi) {
+    if (options.openapi) {
         delete swaggerDocs.swagger;
+    } else {
+        delete swaggerDocs.openapi;
     }
 
     return swaggerDocs;

@@ -1,5 +1,5 @@
-import { ISwaggerInfo, ISwaggerExternalDocs } from './i-swagger';
-import { IApiOperationArgsBaseResponse } from './i-api-operation-args.base';
+import {ISwaggerInfo, ISwaggerExternalDocs} from './i-swagger';
+import {IApiOperationArgsBaseResponse} from './i-api-operation-args.base';
 export interface ISwaggerBuildDefinitionModelPropertyType {
     type?: string | ISwaggerBuildDefinitionModelPropertyType;
 }
@@ -71,6 +71,18 @@ export interface ISwaggerSecurityDefinition {
      * Optional.
      */
     name?: string;
+
+    /**
+     * Define scheme.
+     * Optional.
+     */
+    scheme?: string;
+
+    /**
+     * Define bearer format.
+     * Optional.
+     */
+    bearerFormat?: string;
 }
 export interface ISwaggerBuildDefinition {
     /**
@@ -138,4 +150,6 @@ export interface ISwaggerBuildDefinition {
      */
     groupProtalName?: string;
 }
-export declare function build(buildDefinition: ISwaggerBuildDefinition): void;
+export declare function build(
+    buildDefinition: ISwaggerBuildDefinition,
+): void;
